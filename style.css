@@ -44,12 +44,19 @@ a {
 }
 
 ul {
-  list-style: none;
   padding-left: 0;
 }
 
 li {
+  list-style: none;
   color: var(--color-white);
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
 }
 
 h1 {
@@ -86,7 +93,7 @@ p {
   box-sizing: border-box;
 }
 
-/* Navbar */
+/* 1.Navbar */
 
 #navbar {
   display: flex;
@@ -118,4 +125,34 @@ p {
 
 .navbar__menu__item:hover {
   background-color: var(--color-dark-pink);
+}
+
+/* 2.Home */
+
+#home {
+  background: url(imgs/homebg.png) center/cover no-repeat;
+  padding: 40px;
+  text-align: center;
+}
+
+.home__avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 2px solid var(--color-white);
+}
+
+.home__title,
+.home__description {
+  color: var(--color-white);
+}
+
+.home__contact {
+  color: var(--color-white);
+  font-size: var(--font-regular);
+  font-weight: var(--weight-semi-bold);
+  margin: 24px;
+  padding: 8px 12px;
+  border: 2px solid var(--color-white);
+  border-radius: var(--size-border-radius);
 }
