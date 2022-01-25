@@ -106,6 +106,7 @@ p {
   background-color: transparent;
   align-items: center;
   color: var(--color-white);
+  z-index: 1;
 }
 
 #navbar.navbar--dark {
