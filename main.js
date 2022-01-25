@@ -63,15 +63,37 @@ arrowUp.addEventListener('click', () => {
 })
 
 
+// Show works
+// 1. front back etc 클릭 이벤트 체크
+// 2. 각 버튼 눌리면 다른 얘들에 클래스 추가 (숨기기)
+// 3. all 이면 달렸던 것 리무브
+
+const workBtnContainer = document.querySelector('.work__categories');
+const projectContainer = document.querySelector('.work__projects');
+const projects = document.querySelectorAll('.project');
+
+workBtnContainer.addEventListener('click', (e) => {
+    const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+    if (filter == null) {
+        return;
+    }
+    projectContainer.classList.add('anim-out')
+    setTimeout(() => {
+    projects.forEach((project) => {
+        if (filter === '*' || filter === project.dataset.type) {
+            project.classList.remove('invisible');
+        } else {
+            project.classList.add('invisible');
+        }
+    });
+ 
+        projectContainer.classList.remove('anim-out');
+    }, 300);
+});
+
 
 function scrollIntoViews(selector) {
     const scrollTo = document.querySelector(selector);
     scrollTo.scrollIntoView({behavior: "smooth"});
 }
-
-// make Up arrow button
-
-//1. 홈 세로 길이밑으로 내려가면 우측 하단에 애로우 키 추가
-//2. 홈세로 길이 안으로 들어오면 우측하단 애로우 키 감추기
-//3. 애로우키 누르면 홈, 최상단으로 이동시키기
 
