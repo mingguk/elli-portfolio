@@ -98,12 +98,19 @@ p {
 /* 1.Navbar */
 
 #navbar {
+  position: fixed;
   display: flex;
   padding: 16px;
+  width: 100%;
   justify-content: space-between;
-  background-color: var(--color-pink);
+  background-color: transparent;
   align-items: center;
   color: var(--color-white);
+}
+
+#navbar.navbar--dark {
+  background-color: var(--color-pink);
+  transition: all var(--animation-duration) ease-in-out;
 }
 
 .navbar__logo {
@@ -144,6 +151,7 @@ p {
 #home {
   background: url(imgs/homebg.png) center/cover no-repeat;
   padding: 40px;
+  padding-top: 100px;
   text-align: center;
 }
 
@@ -225,6 +233,12 @@ p {
 .job__description {
   margin: 0 16px;
   text-align: left;
+}
+
+.job img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
 }
 
 .job__name {
