@@ -12,7 +12,10 @@ document.addEventListener('scroll', () => {
     } else {
         navbar.classList.remove('navbar--dark');
     }
-})
+});
+
+
+
 
 // Handle scrolloing when tapping on the navbar menu
 
@@ -24,8 +27,18 @@ navbarMenu.addEventListener('click', () => {
     if (link == null) {
         return;
     }
+    navbarMenu.classList.remove('open');
     scrollIntoViews(link);
+});
+
+
+// Navbar toggle button for small screen
+
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', () => {
+    navbarMenu.classList.toggle('open');
 })
+
 
 // handle when Contact Me is clicked
 
@@ -34,7 +47,7 @@ contactMe.addEventListener('click', () => {
     const target = event.target;
     const link = target.dataset.link;
     scrollIntoViews(link);
-})
+});
 
 
 
@@ -44,7 +57,7 @@ const home = document.querySelector('.home__container');
 const homeHeight = home.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
     home.style.opacity = 1 - window.scrollY / homeHeight;
-})
+});
 
 // Show 'arrow up' button when scrolling down
 const arrowUp = document.querySelector('.arrow-up');
@@ -60,7 +73,7 @@ document.addEventListener('scroll', () => {
 
 arrowUp.addEventListener('click', () => {
     scrollIntoViews('#home');
-})
+});
 
 
 // Show works
